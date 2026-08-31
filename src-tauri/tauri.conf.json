@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Codex Spec Workflow",
+  "version": "0.1.0",
+  "identifier": "com.codex.spec-workflow",
+  "build": {
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Codex Spec Workflow",
+        "url": "http://127.0.0.1:8247",
+        "width": 1280,
+        "height": 820,
+        "minWidth": 760,
+        "minHeight": 560
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": false
+  }
+}

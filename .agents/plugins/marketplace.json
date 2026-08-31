@@ -1,0 +1,20 @@
+{
+  "name": "codex-spec-workflow-local",
+  "interface": {
+    "displayName": "Codex Spec Workflow Local"
+  },
+  "plugins": [
+    {
+      "name": "codex-spec-workflow",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

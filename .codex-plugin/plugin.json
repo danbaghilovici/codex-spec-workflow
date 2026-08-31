@@ -1,0 +1,32 @@
+{
+  "name": "codex-spec-workflow",
+  "version": "0.1.0",
+  "description": "Approval-gated feature specifications and bug fixes with deterministic local state.",
+  "author": {
+    "name": "Codex Spec Workflow contributors"
+  },
+  "homepage": "https://github.com/danbaghilovici/codex-spec-workflow",
+  "repository": "https://github.com/danbaghilovici/codex-spec-workflow",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "specification",
+    "workflow",
+    "task-execution",
+    "bug-fix"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Codex Spec Workflow",
+    "shortDescription": "Plan and execute approved specs and bug fixes.",
+    "longDescription": "Create requirements, designs, dependency-aware tasks, and evidence-backed bug fixes with explicit approval gates and structured local state.",
+    "developerName": "Codex Spec Workflow contributors",
+    "category": "Developer Tools",
+    "capabilities": ["Interactive", "Write"],
+    "defaultPrompt": [
+      "Create an approval-gated specification for this feature.",
+      "Execute the next ready task in my specification.",
+      "Analyze this bug and produce a fix plan."
+    ]
+  }
+}
