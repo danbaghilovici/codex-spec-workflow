@@ -33,7 +33,8 @@ Workflow state lives under \`.codex-specs/\`. Treat Markdown documents as the so
 requirements, design, tasks, and bug content; use \`workflow.json\` for phase and approval state.
 
 - Stop at every approval gate. Record approval with \`codex-spec workflow approve\` before advancing.
-- Execute one spec task at a time. Mark it complete only after its acceptance criteria and checks pass.
+- Execute one approved spec task by default. Continue through multiple tasks sequentially only when
+  the user explicitly requests them together. Validate and mark each task complete before the next.
 - Prefer project templates in \`.codex-specs/templates/\` and preserve user customizations.
 - Use the named read-only validator agents when available; follow the skill's local fallback otherwise.
 

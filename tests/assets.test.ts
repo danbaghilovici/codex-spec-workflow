@@ -43,13 +43,39 @@ describe("skill, agent, and plugin contracts", () => {
     expect(actual).toEqual([...TEMPLATE_NAMES].sort());
   });
 
+  it("requires explicit authorization to execute multiple spec tasks", async () => {
+    const content = await readFile(
+      path.join(root, "skills", "spec-execute", "SKILL.md"),
+      "utf8",
+    );
+    expect(content).toContain("Default to exactly one task per invocation.");
+    expect(content).toContain(
+      "Task approval and `$spec-execute` invocation alone are not multi-task authorization",
+    );
+    expect(content).toMatch(
+      /When multi-task execution was\s+explicitly authorized/,
+    );
+  });
+
   it("plugin manifest points at the canonical skill tree", async () => {
     const manifest = JSON.parse(
       await readFile(path.join(root, ".codex-plugin", "plugin.json"), "utf8"),
-    ) as unknown as { name: string; skills: string };
+    ) as unknown as {
+      name: string;
+      version: string;
+      skills: string;
+      interface: { defaultPrompt: string[] };
+    };
+    const packageManifest = JSON.parse(
+      await readFile(path.join(root, "package.json"), "utf8"),
+    ) as unknown as { version: string };
     expect(manifest).toMatchObject({
       name: "codex-spec-workflow",
+      version: packageManifest.version,
       skills: "./skills/",
     });
+    expect(manifest.interface.defaultPrompt).toContain(
+      "Execute the next approved task in my specification.",
+    );
   });
 });

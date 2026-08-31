@@ -1,6 +1,6 @@
 {
   "name": "codex-spec-workflow",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Approval-gated feature specifications and bug fixes with deterministic local state.",
   "author": {
     "name": "Codex Spec Workflow contributors"
@@ -25,7 +25,7 @@
     "capabilities": ["Interactive", "Write"],
     "defaultPrompt": [
       "Create an approval-gated specification for this feature.",
-      "Execute the next ready task in my specification.",
+      "Execute the next approved task in my specification.",
       "Analyze this bug and produce a fix plan."
     ]
   }

@@ -48,9 +48,12 @@ describe("safe installer", () => {
         "utf8",
       ),
     ).toContain("policy:\n  allow_implicit_invocation: false\n");
-    expect(await readFile(path.join(root, "AGENTS.md"), "utf8")).toContain(
-      "Keep this.",
+    const agents = await readFile(path.join(root, "AGENTS.md"), "utf8");
+    expect(agents).toContain("Keep this.");
+    expect(agents).toContain(
+      "Continue through multiple tasks sequentially only when",
     );
+    expect(agents).toContain("the user explicitly requests them together");
     expect(
       await readFile(
         path.join(root, ".agents", "skills", "custom-skill", "SKILL.md"),

@@ -1,5 +1,5 @@
 interface:
   display_name: "Spec Execute"
-  short_description: "Execute one approved, dependency-ready specification task"
+  short_description: "Execute approved spec tasks with explicit scope"
 policy:
   allow_implicit_invocation: false

@@ -18,7 +18,7 @@ the dashboard.
 The Claude adapter contains more than its headline spec flow:
 
 - Ten workflows: five spec commands and five bug commands.
-- Requirements -> design -> tasks -> one-task-at-a-time execution.
+- Requirements -> design -> tasks -> scoped dependency-aware execution.
 - Explicit approval gates and validation agents.
 - Nine customizable document templates.
 - Steering documents for product, technology, and structure.
@@ -57,7 +57,7 @@ The comparison used current `main` commit
 | Bug workflow | Yes | No |
 | Customizable templates | 9 | Prompt strings only |
 | Steering context | Yes | Partial |
-| One-task execution | Yes | Yes |
+| Dependency-aware task execution | Yes | Yes |
 | Dependency checking | No/limited | Yes |
 | Dashboard and tunnels | Yes | No |
 | Native Codex skills | No | No |
@@ -184,7 +184,7 @@ removes the dashboard's fragile dependence on emoji and prose heuristics.
 - Convert every source command into a focused `SKILL.md`.
 - Make `$spec-create` resumable and stop after every approval boundary.
 - Preserve codebase research, template compliance, traceability, and
-  one-task-at-a-time execution.
+  one-task default execution with explicit sequential multi-task opt-in.
 - Package templates as skill assets while supporting project-local overrides.
 - Define exact expected inputs, outputs, stop conditions, and recovery paths.
 - Add clear fallback behavior when subagents are unavailable or disabled.
@@ -262,14 +262,15 @@ migration behavior, or dashboard.
 - Dashboard and tunnel integration tests.
 - Clean lint, typecheck, test, build, and package-tarball installation.
 - Codex smoke tests for skill discovery, explicit invocation, custom-agent
-  loading, approval resume, one-task execution, and task completion.
+  loading, approval resume, default single-task execution, explicit multi-task
+  execution, and task completion.
 
 ## Milestones
 
 ### Milestone 1: Core workflow
 
 Complete steps 1-4. Deliver all ten skills, deterministic state, templates,
-validators, and one-task execution in a development checkout.
+validators, and explicitly scoped task execution in a development checkout.
 
 ### Milestone 2: Installation and migration
 
@@ -292,8 +293,8 @@ matrix and end-to-end Codex smoke tests.
 - The feature workflow enforces requirements, design, and task approval gates.
 - The bug workflow supports report, analysis, fix, and verification phases.
 - Validators produce actionable results before user review.
-- Execution implements exactly one task and only marks it complete after
-  validation.
+- Execution defaults to one task, continues sequentially only with explicit
+  multi-task authorization, and marks each task complete after validation.
 - No separate OpenAI API key is required.
 - Existing Claude workflow projects can be migrated without data loss.
 - Updates preserve unrelated and user-customized files.

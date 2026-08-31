@@ -46,8 +46,10 @@ $bug-verify wrong-status
 ```
 
 Each content phase stops for explicit approval. Approval is stored in `workflow.json`; requirements,
-design, and tasks remain Markdown source of truth. `$spec-execute` runs one dependency-ready task and
-marks it complete only after its acceptance criteria and relevant checks pass.
+design, and tasks remain Markdown source of truth. `$spec-execute` runs one dependency-ready task by
+default. It continues through multiple tasks sequentially only when the user explicitly asks to
+implement them together. Each task is marked complete only after its acceptance criteria and relevant
+checks pass.
 
 Useful deterministic commands:
 
