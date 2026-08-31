@@ -51,6 +51,16 @@ describe("safe installer", () => {
     const agents = await readFile(path.join(root, "AGENTS.md"), "utf8");
     expect(agents).toContain("Keep this.");
     expect(agents).toContain(
+      "only after the user explicitly invokes an installed skill whose name starts with",
+    );
+    expect(agents).toContain("`$spec-` or `$bug-`");
+    expect(agents).toContain(
+      "Neither existing `.codex-specs/` content nor a request matching a registered",
+    );
+    expect(agents).toContain(
+      "Without an explicit workflow skill mention, do not initiate",
+    );
+    expect(agents).toContain(
       "Continue through multiple tasks sequentially only when",
     );
     expect(agents).toContain("the user explicitly requests them together");

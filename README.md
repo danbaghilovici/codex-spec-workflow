@@ -29,7 +29,8 @@ configuration are preserved. Managed writes are atomic and updated files are bac
 
 The workflows are opt-in: Codex uses them only when you explicitly mention an installed skill with
 `$skill-name`. Ordinary planning, implementation, and bug-fix requests do not activate the spec
-workflow automatically.
+workflow automatically. Existing `.codex-specs/` content or a request matching a registered spec or
+bug is not invocation. The installer writes the same guard into its managed `AGENTS.md` section.
 
 Invoke the installed skills in Codex:
 

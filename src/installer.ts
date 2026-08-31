@@ -29,6 +29,12 @@ const AGENTS_END = "<!-- codex-spec-workflow:end -->";
 const AGENTS_SECTION = `${AGENTS_START}
 ## Codex Spec Workflow
 
+Apply this section only after the user explicitly invokes an installed skill whose name starts with
+\`$spec-\` or \`$bug-\`. An ordinary feature, planning, implementation, debugging, or bug-fix request is
+not workflow invocation. Neither existing \`.codex-specs/\` content nor a request matching a registered
+spec or bug authorizes the workflow. Without an explicit workflow skill mention, do not initiate,
+resume, advance, or enforce this workflow; handle the request normally.
+
 Workflow state lives under \`.codex-specs/\`. Treat Markdown documents as the source of truth for
 requirements, design, tasks, and bug content; use \`workflow.json\` for phase and approval state.
 
