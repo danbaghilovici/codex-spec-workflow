@@ -1,0 +1,5 @@
+interface:
+  display_name: "Bug Analyze"
+  short_description: "Investigate an approved bug and draft its fix plan"
+policy:
+  allow_implicit_invocation: false

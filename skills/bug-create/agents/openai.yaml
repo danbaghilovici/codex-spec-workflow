@@ -1,0 +1,5 @@
+interface:
+  display_name: "Bug Create"
+  short_description: "Create or resume an approval-gated bug report"
+policy:
+  allow_implicit_invocation: false

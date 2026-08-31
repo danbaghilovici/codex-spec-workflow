@@ -1,0 +1,5 @@
+interface:
+  display_name: "Spec Steering Setup"
+  short_description: "Create approved product, technology, and structure guidance"
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Spec Status"
+  short_description: "Show approval, task progress, and next specification action"
+policy:
+  allow_implicit_invocation: false

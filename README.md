@@ -27,7 +27,11 @@ configuration are preserved. Managed writes are atomic and updated files are bac
 
 ## Use the workflows
 
-Mention the installed skills in Codex:
+The workflows are opt-in: Codex uses them only when you explicitly mention an installed skill with
+`$skill-name`. Ordinary planning, implementation, and bug-fix requests do not activate the spec
+workflow automatically.
+
+Invoke the installed skills in Codex:
 
 ```text
 $spec-steering-setup

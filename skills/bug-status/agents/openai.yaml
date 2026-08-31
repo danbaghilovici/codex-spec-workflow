@@ -1,0 +1,5 @@
+interface:
+  display_name: "Bug Status"
+  short_description: "Show phase, approval, and progress for bug workflows"
+policy:
+  allow_implicit_invocation: false

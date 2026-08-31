@@ -111,10 +111,11 @@ $bug-fix wrong-status
 $bug-verify wrong-status
 ```
 
-These are skill mentions rather than custom slash commands. Generating one
-skill per implementation task would overcrowd the Codex skill registry, so the
-Claude adapter's generated task commands should be replaced by one resumable
-`$spec-execute` skill.
+These are explicit skill mentions rather than custom slash commands. The skills
+must not activate implicitly for ordinary planning, implementation, or bug-fix
+requests. Generating one skill per implementation task would overcrowd the
+Codex skill registry, so the Claude adapter's generated task commands should be
+replaced by one resumable `$spec-execute` skill.
 
 ### Installed project layout
 

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Spec Create"
+  short_description: "Create or resume an approval-gated feature specification"
+policy:
+  allow_implicit_invocation: false

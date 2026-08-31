@@ -1,0 +1,5 @@
+interface:
+  display_name: "Spec Execute"
+  short_description: "Execute one approved, dependency-ready specification task"
+policy:
+  allow_implicit_invocation: false

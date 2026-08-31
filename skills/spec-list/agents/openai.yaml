@@ -1,0 +1,5 @@
+interface:
+  display_name: "Spec List"
+  short_description: "List specification workflows and summarize progress"
+policy:
+  allow_implicit_invocation: false

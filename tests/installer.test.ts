@@ -29,6 +29,25 @@ describe("safe installer", () => {
         (action) => action.path === ".agents/skills/spec-create/SKILL.md",
       ),
     ).toBe(true);
+    expect(
+      result.actions.some(
+        (action) =>
+          action.path === ".agents/skills/spec-create/agents/openai.yaml",
+      ),
+    ).toBe(true);
+    expect(
+      await readFile(
+        path.join(
+          root,
+          ".agents",
+          "skills",
+          "spec-create",
+          "agents",
+          "openai.yaml",
+        ),
+        "utf8",
+      ),
+    ).toContain("policy:\n  allow_implicit_invocation: false\n");
     expect(await readFile(path.join(root, "AGENTS.md"), "utf8")).toContain(
       "Keep this.",
     );

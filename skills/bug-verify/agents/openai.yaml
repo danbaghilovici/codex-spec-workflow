@@ -1,0 +1,5 @@
+interface:
+  display_name: "Bug Verify"
+  short_description: "Verify an approved bug fix before final closure"
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Bug Fix"
+  short_description: "Implement an approved bug fix with regression coverage"
+policy:
+  allow_implicit_invocation: false

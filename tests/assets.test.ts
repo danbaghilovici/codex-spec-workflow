@@ -18,6 +18,16 @@ describe("skill, agent, and plugin contracts", () => {
       expect(content).toMatch(/\ndescription: .+\n---\n/);
       expect(content).not.toContain(".claude/");
       expect(content).not.toMatch(/`\/(?:spec|bug)-/);
+
+      const metadata = await readFile(
+        path.join(root, "skills", name, "agents", "openai.yaml"),
+        "utf8",
+      );
+      expect(metadata).toContain('interface:\n  display_name: "');
+      expect(metadata).toContain('\n  short_description: "');
+      expect(metadata).toContain(
+        "\npolicy:\n  allow_implicit_invocation: false\n",
+      );
     }
   });
 
